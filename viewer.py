@@ -22,6 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os
 import re
 import argparse
 from pathlib import Path
@@ -364,6 +365,11 @@ def main() -> None:
 
         draw_function(order[:args.n], fig=fig)
         plt.show()
+
+        # saving figure
+        save_path = os.path.join('viewer/', 'show.png')
+        plt.savefig(save_path)
+        print(f"Figure saved as {save_path}")
 
 
 if __name__ == "__main__":
